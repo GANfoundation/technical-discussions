@@ -1,6 +1,7 @@
 This repository and its content inherit a licensing model from the Global Acceptance Network Foundation (GAN)
 
-The license model comprises of two parts and as such two documents:
+The license model comprises of the following policies: 
 
-[Copyright Policy]()
-[Source Code]()
+* Copyright Policy: https://creativecommons.org/licenses/by/4.0/legalcode
+* Patent mode uses W3C Patent Policy: https://www.w3.org/Consortium/Patent-Policy-20040205/ 
+* Source Code uses Apache 2: http://www.apache.org/licenses/LICENSE-2.0.html

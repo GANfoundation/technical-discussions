@@ -37,9 +37,9 @@ The objective of this section is to establish a common framework for discussing 
 - Data Representation or Encoding
 	- Refers to how the credential’s data is serialized or represented for transmission. Common encoding formats include JSON, JWT, SD-JWT, CBOR, and JSON-LD. These formats dictate how the data is structured, whether as a compact binary format like CBOR or a more human-readable format like JSON.
 - Credential Exchange and Lifecycle Standards
-	- These standards define how verifiable credentials are requested, issued, presented, and verified across different systems and protocols. They establish common frameworks to ensure interoperability and security between credential issuers, holders, and verifiers. Unlike specific transport protocols (such as DIDComm or OIDC), these standards are often agnostic to the underlying transport mechanism and can be implemented in various environments.
+	- These standards define how verifiable credentials are requested, issued, presented, and verified across different systems and protocols. They establish common frameworks to ensure interoperability and security between credential issuers, holders, and verifiers. Unlike specific transport protocols (such as DIDComm or OID4VC), these standards are often agnostic to the underlying transport mechanism and can be implemented in various environments.
 - Transport and Credential Exchange Protocols
-	- The mechanisms or protocols that allow Verifiable Credentials and Presentations to be securely transmitted between entities (such as issuers, holders, and verifiers). Examples include OIDC (OpenID Connect), DIDComm v1 and v2, which handle the secure exchange of credentials over the web or peer-to-peer networks.
+	- The mechanisms or protocols that allow Verifiable Credentials and Presentations to be securely transmitted between entities (such as issuers, holders, and verifiers). Examples include OID4VC (OpenID for Verifiable Credentials), DIDComm v1 and v2, which handle the secure exchange of credentials over the web or peer-to-peer networks.
 - Data Integrity and Cryptographic Assurance (Proof and Signing)
 	- This encompasses the cryptographic mechanisms used to ensure that data within a credential is valid, tamper-proof, and can be trusted. This includes proof mechanisms like Linked Data Proofs (LD-PROOF), CL Signatures, BBS+ Signatures, and standards like Verifiable Credential Data Integrity 1.0.
 - Revocation Mechanism or Status List
@@ -89,7 +89,7 @@ The objective of this section is to establish a common framework for discussing 
 	- These standards are designed to be independent of Transport and Credential Exchange protocols (listed below) however, many are targeted towards newer protocols and may not be easily implemented
 	- Dencentralized Identity Foundation (DIF) Presentation Exchange
 		- A specification from the DIF that standardizes how verifiable credentials are requested and presented. It defines the data model for a presentation request and how a holder can provide a presentation response using credentials they possess.
-		- This standard is transport-agnostic and can be used with protocols such as OIDC, DIDComm, and **CHAPI**, enabling flexibility in its implementation.
+		- This standard is transport-agnostic and can be used with protocols such as OID4VC, DIDComm, and **CHAPI**, enabling flexibility in its implementation.
 	- Hyperledger Indy Proof Request
 		- A mechanism within the Hyperledger Indy ecosystem used to request and verify AnonCreds. The proof request specifies which attributes or claims should be revealed from the holder’s credential, supporting selective disclosure and privacy-preserving proofs.
 	- Hyperledger AnonCreds Proof Request
@@ -102,11 +102,14 @@ The objective of this section is to establish a common framework for discussing 
 - Transport and Credential Exchange Protocols
 	- OIDC
 		- OpenID Connect (OIDC) is an identity layer built on top of the OAuth 2.0 protocol, enabling the verification of an end-user’s identity based on authentication performed by an authorization server. It also allows for secure, structured information (claims) about the user to be shared between parties. OIDC is widely used for Single Sign-On (SSO)
-		- Credential Exchange Protocols
-			- 4VC
-				- OpenID Connect for Verifiable Credentials (4VC) is an extension of OIDC, enabling the secure issuance and exchange of Verifiable Credentials.
-			- 4VP
-				- OpenID Connect for Verifiable Presentations (4VP) is another OIDC extension that allows holders to present Verifiable Credentials to verifiers securely.
+	- OID4VC
+		- OpenID for Verifiable Credentials (OID4VC) is an evolution of OIDC, designed for exchanging Verifiable Credentials. It can be used together with OIDC and consists of the following additional specifications:
+			- OID4VCI
+				- OpenID for Verifiable Credential Issuance (OID4VCI) enables the secure issuance and exchange of Verifiable Credentials.
+			- OID4VP
+				- OpenID for Verifiable Presentations (OID4VP) allows holders to present Verifiable Credentials to verifiers securely.
+			- SIOPv2
+				- Self-Issued OpenID Provider v2 (SIOPv2) enables the end-user to become the issuer of identity information.
 	- DIDComm
 		- v1
 			- The first version of the Decentralized Identifier Communication protocol, allowing secure and privacy-respecting peer-to-peer messaging between parties.
@@ -187,7 +190,7 @@ The following options are supported in the available reference systems of `ACA-P
 	- SD-JWT-VC
 	- AnonCreds
 	- Only supports verification only (not issuance) over DIDComm for JWT-VC and and SD-JWT-VC
-	- Support for OIDC is experimental but this works with JWT-VC and SD-JWT-VC
+	- Support for OID4VC is experimental but this works with JWT-VC and SD-JWT-VC
 - ACA-Py Supports
 	- AnonCreds (in AnonCreds original as well as in VCDM 1.1 and VCDI)
 	- LDP-VC with VCDM 1.1 and the DIF Presentation Exchange Standard
@@ -365,8 +368,8 @@ Note: As we are using AnonCreds v1 with Issue Credential v2 and Present Proof v2
     - Verifiable Credential Data Model 2.0:
         - Not widely adopted and therefore does not align with decision drivers.
     - Verifiable Credential Data Model 1.1 with JWT-VC or SD-JWT-VC:
-        - Not widely used in message-centric environments, but suitable for API-centric (OIDC) use cases.
-	        - ACA-Py does not support JWT-VC, only SD-JWT-VC and only over OIDC
+        - Not widely used in message-centric environments, but suitable for API-centric (OID4VC) use cases.
+	        - ACA-Py does not support JWT-VC, only SD-JWT-VC and only over OID4VC
 	        - Credo-ts does support JWT-VC and SD-JWT-BC but only verification is supported over DIDComm (not issuance)
     - Verifiable Credential Data Model 1.1 with JSON-LD and ZKP using BBS+ signatures:
         - Not widely used and more complex to start with.

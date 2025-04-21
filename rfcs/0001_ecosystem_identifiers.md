@@ -21,6 +21,9 @@ This RFC outlines the required and recommended traits for Decentralized Identifi
 
 ## 2. Trait Evaluation Table
 
+All traits marked with a [x] are required to be a valid DID Method for registration in the Ayra Trust Network as an ecosystem and trust registry identifier.
+
+
 | **Trait Name** | **Description** | **Valid?** |
 |----------------|-----------------|------------|
 | Update supported | Ability to update the DID Document. | [x] |

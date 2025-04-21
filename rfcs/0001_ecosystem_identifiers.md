@@ -1,4 +1,4 @@
-# Requirements For Ecosystem And Trust Registry DID based Identifiers
+# Requirements For Ecosystem And Trust Registry DID Based Identifiers
 
 | Field         | Value                |
 |---------------|----------------------|

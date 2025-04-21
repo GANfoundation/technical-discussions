@@ -1,6 +1,4 @@
-# Ayra Trust Network RFC: DID Traits
-
-## DID Traits RFC
+# Requirements For Ecosystem And Trust Registry DID based Identifiers
 
 | Field         | Value                |
 |---------------|----------------------|

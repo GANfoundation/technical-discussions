@@ -4,6 +4,7 @@
 |---------------|----------------------|
 | **Document Title** | DID Requirements For Ecosystem and Trust Registry DIDs         |
 | **Version**         | 1.0                    |
+| **RFC**         | 002                    |
 | **Status**          | Draft                  |
 | **Author**          | andor.kesselman@ayra.forum       |
 | **Last Updated**    | 2025-04-21             |

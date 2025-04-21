@@ -80,6 +80,6 @@ These infrastructure-level DIDs are essential to decentralized policy propagatio
 
 The following DID methods are considered compatible as of this writing (pending deeper conformance testing):
 
-- `did:webvch`
+- `did:webvh`
 
 ---
